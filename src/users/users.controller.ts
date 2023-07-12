@@ -1,4 +1,14 @@
-import { Get, Controller, Post, Patch, Delete, Req, Res } from '@nestjs/common';
+import {
+  Get,
+  Controller,
+  Post,
+  Patch,
+  Delete,
+  Req,
+  Res,
+  HttpCode,
+  HttpStatus,
+} from '@nestjs/common';
 import { Request, Response } from 'express';
 
 @Controller('users')
@@ -10,6 +20,7 @@ export class UserController {
   }
 
   @Get('user')
+  @HttpCode(HttpStatus.OK)
   findOne(): string {
     return 'user data!';
   }
